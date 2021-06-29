@@ -25,9 +25,9 @@ class AndroidstudiopluginPlugin: FlutterPlugin, MethodCallHandler {
     if (call.method == "getPlatformVersion") {
       result.success("Android ${android.os.Build.VERSION.RELEASE}")
     } else if (call.method == "getPlatformBattery") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")
+      result.success("Android ${android.os.Build.TIME}")
     } else if (call.method == "getTelephonyInfo") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")  
+      result.success("Android  Telephony ${android.telecom.Call.Callback}")  
     } else {
       result.notImplemented()
     }

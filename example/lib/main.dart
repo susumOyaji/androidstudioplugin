@@ -59,8 +59,8 @@ class _MyAppState extends State<MyApp> {
 
     setState(() {
       _platformVersion = platformVersion;
-      _platformBattery = _platformBattery;
-      _platformTelephony = _platformTelephony;
+      _platformBattery = platformBattery;
+      _platformTelephony = platformTelephony;
     });
   }
 
@@ -68,13 +68,16 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
-        ),
-      ),
+          appBar: AppBar(
+            title: const Text('Plugin example app'),
+          ),
+          body: Column(
+            children: [
+              Text('Running on: $_platformVersion\n'),
+              Text('Running on: $_platformBattery\n'),
+              Text('Running on: $_platformTelephony\n'),
+            ],
+          )),
     );
   }
 }
